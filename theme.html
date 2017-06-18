@@ -1,0 +1,847 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<HTML>
+<HEAD>
+<!--
+
+This disastrous theme is by
+
+db   dD .d888b. d88888b 
+88 ,8P' 88   8D 88'     
+88,8P   `VoooY' 88ooooo 
+88`8b   .d~~~b. 88~~~~~ 
+88 `88. 88   8D 88.     
+YP   YD `Y888P' Y88888P 
+
+katiezone.biz
+                        
+-->
+	<META CHARSET=utf-8>
+	<META NAME="viewport" CONTENT="wIDth=device-wIDth, initial-scale=1.0">
+	
+	<META NAME="color:Background" CONTENT="#CCCCFF">
+	<META NAME="color:BoxHighlight" CONTENT="#CCCCFF">
+	<META NAME="image:Header" CONTENT=""/>
+	<META NAME="image:BackgroundImage" CONTENT=""/>
+	<META NAME="text:PathToPhotosetResponsiveScript" CONTENT="">
+	<META NAME="text:PathToPhotosetResponsiveStyles" CONTENT="">
+	<META NAME="text:PathToUnnamedJS" CONTENT="">
+
+    {block:Description}
+    <META NAME="description" CONTENT="{MetaDescription}" />
+	{/block:Description}
+	
+	<LINK rel="shortcut icon" HREF="{Favicon}">
+	<LINK rel="alternate" TYPE="application/rss+xml" HREF="{RSS}">
+	<LINK rel="stylesheet" TYPE="text/css" HREF="{text:PathToPhotosetResponsiveStyles}"> <!-- pxuPhotoset.css -->
+	
+	<title>{Title}</title>
+
+	<STYLE>
+    /*
+    good colors:
+    aol purple: #CCCCFF
+    */
+    
+    HTML, BODY {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: {color:Background};
+        background-image: url('{image:BackgroundImage}');
+        font-family: arial;
+        font-size: small;
+    }
+    
+    H1 {
+        text-align: center;
+    }
+    
+    H2, H3, H4, H5, H6 {
+    }
+    
+    BLOCKQUOTE {
+        border-left: 5px solid #969696;
+        Padding-left: 10px;
+        margin-left: 10px;
+        margin-right: 0;
+    }
+    
+    PRE {
+        background-color: #EEEEEE;
+        display: block;
+        width: 100%;
+        overflow: scroll;
+        padding: 5px;
+        word-wrap: normal;
+        word-break: normal;
+        white-space: pre;
+    }
+    
+    A {
+    
+    }
+    
+    A:hover {
+    }
+    
+    IMG {
+        max-width: 100%;
+    }
+    
+    A.main-title {
+        color: #000000;
+        text-decoration: none;
+    }
+    
+    A.main-title:hover {
+        text-decoration: underline;
+    }
+    
+    .description {
+        display: inline-block;
+        padding: 0 10px;
+    }
+    
+    .description p {
+        margin-top: 0;
+    }
+    
+    #nav {
+        background-color: #FFFFFF;
+    }
+    
+    .nav-links {
+        background-color: {color:BoxHighlight};
+    }
+    
+    .nav-links TD {
+        padding: 10px; 
+    }
+    
+    .filter {
+        background-color: #CCCCCC;
+    }
+    
+    .filter TD {
+        padding: 5px; 
+    }
+    
+    .filter SELECT {
+        border: 2px outset; 
+        padding: 3px; 
+        color: #000000; 
+        background-color: #FFFFFF;    
+        letter-spacing: 1px; 
+    }
+    
+    #pagination {
+        background-color: #FFFFFF;
+    }
+    
+    #pagination TR {
+        background-color: {color:BoxHighlight};
+    }
+    
+    #pagination TD {
+        padding: 10px;
+    }
+    
+    #post-list {
+        border-spacing: 5px;
+        max-width: 700px;
+        min-width: 100%;
+        
+        {block:PermalinkPage}
+        border: 0;
+        {/block:PermalinkPage}
+    }
+    
+    @media (min-width: 700px) { 
+        #post-list {
+            width: 700px;
+            min-width: 700px;
+            max-width: 700px;
+        }
+    }
+    
+    #post-list TBODY {
+        background-color: #FFFFFF;
+        
+        {block:PermalinkPage}
+        background-color: inherit;
+        background-color: initial;
+        background-color: transparent;
+        {/block:PermalinkPage}
+    }
+    
+    #post-list TD {
+    }
+    
+    #post-list > TBODY > TR > TD { /* end my suffering */
+        {block:PermalinkPage}
+        border: 0;
+        {/block:PermalinkPage}
+    }
+    
+    
+    .post {
+        width: 100%;
+        table-layout: fixed;
+    }
+    
+    .post TH {
+        padding: 3px 5px;
+        text-align: left;
+        background-color: #DDDDDD;
+    }
+    
+    .post TR {
+        background-color: #FFFFFF;
+    }
+    
+    .post TD {
+        padding: 5px;
+    }
+    
+    .post .photo {
+        max-width: 100%;
+    }
+    
+    .post-title {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+    .post-info {
+    }
+    
+    .post-info TD {
+        background-color: #DDDDDD;
+    }
+    
+    .info-box {
+    }
+    
+    .video-post {
+        table-layout: fixed;
+        width: 100%;
+    }
+    
+    .quote-post p {
+        margin: 10px;
+    }
+    
+    #note-list {
+        margin-top: 10px;
+        width: 100%;
+    }
+    
+    #note-list TH {
+        background-color: #BBBBBB;
+    }
+    
+    #note-list TD {
+        background-color: #CCCCCC;
+    }
+    
+    .thread-hell {
+        margin: 10px;
+        display: block;
+        max-width: 700px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+    
+    .thread-hell IMG {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .thread-hell iframe {
+        width: 100%;
+    }
+    
+    @media (max-width: 450px) { 
+        .thread-hell iframe {
+            width: 100%;
+            height: auto;
+        }
+    }
+    
+    .tmblr-embed.tmblr-full {
+        margin: 0;
+    }
+    
+    .all-creds {
+        display: hidden;
+        font-size: 0;
+    }
+    
+    .chat-log {
+        padding: 0;
+        border: 2px inset;
+        border-spacing: 0;
+        width: 100%;
+    }
+    
+    .chat-log td {
+        padding: 5px;
+    }
+    
+    .chat-label {
+        font-weight: bold;
+        text-align: right;
+        vertical-align: top;
+        width: 25%;
+    }
+    
+    .chat-log .chat-label {
+        color: #008080;
+    }
+    
+    /* AIM colors in chat */
+    /*(This would be cool, but doesn't make sense when more than 2 chatters are listed)*/
+    /*
+    .chat-log tr:nth-child(2n) .chat-label {
+        color: #FF0000;
+    }
+    .chat-log tr:nth-child(2n+1) .chat-label {
+        color: #0000FF;
+    }
+    */
+    
+    .chat-quote {
+        text-align: left;
+        vertical-align: bottom;
+    }
+    
+    .ask-post {
+        border: 2px inset;
+        margin: 10px;
+        padding: 10px;
+    }
+    
+    .ask-post p {
+        margin: 0;
+    }
+    
+    .ask-post .label {
+        font-family: "Times New Roman", serif;
+        font-weight: bold;
+        font-size: 110%;
+    }
+    
+    .question .label {
+        color: #0000FF;
+    }
+    
+    .question .label a {
+        color: #0000FF;
+    }
+    
+    .answer .label {
+        color: #FF0000;
+        display: inline-block;
+        margin-top: 5px;
+    }
+    
+    .answer .label a {
+        color: #FF0000;
+    }
+    
+    .answer-container p {
+        text-indent: 10%;
+    }
+    
+    .answer-container p:first-child {
+        display: inline;
+        text-indent: 0;
+    }
+    
+    .answer-container IMG {
+        vertical-align: text-top;
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .video-wrapper-wrapper {
+        display: block;
+        width: 100%;
+        position: relative;
+    }
+    
+    .video-wrapper {
+        position: relative;
+        padding-bottom: 56,25%;
+        overflow: hidden;
+        width: 100% !important;
+        height: 0 ;
+    }
+     
+    .video-wrapper iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    
+    .audio-post {
+        margin: 10px;
+    }
+    
+    .icon {
+        opacity: 0.2;
+    }
+    
+    .active-icon .icon {
+        opacity: 1.0;
+    }
+    
+    .copy TD {
+        background-color: {color:BoxHighlight};
+    }
+    
+    .tag-header TD {
+        background-color: #FBFBDD;
+        padding: 5px;
+    }
+
+    </STYLE>
+		
+	<STYLE TYPE="text/css">
+		{CustomCSS}
+	</STYLE>
+		
+</HEAD>
+	
+<BODY>
+	
+	<CENTER>
+    	<IMG SRC="http://katiezone.biz/p/img/webgrafix/nochoice.gif" />
+        <BR />
+		<BR />
+	    
+	    <IMG SRC="{image:Header}" />
+	
+		<H1><A CLASS="main-title" HREF="/">  {Title} </A> </H1>
+		
+		<DIV CLASS="description">
+		{block:Description}
+			<P>{Description}</P>
+		{/block:Description}
+		</DIV>
+		
+        <BR />
+
+    	<TABLE ID="nav" BORDER="3">
+    	    <TBODY>
+    	        <TR CLASS="nav-links">
+    	            <TD>
+    	                <CENTER>
+        	                {block:HasPages}{block:Pages}
+        	                <A HREF="{URL}">{Label}</A> |
+        	                {/block:Pages}{/block:HasPages}
+        	                {block:AskEnabled}
+        	                <A HREF="/ask"> {AskLabel} </A> | 
+        	                {/block:AskEnabled}
+        	                {block:SubmissionsEnabled} 
+        	                <!-- k8e
+        	                <A HREF="/submit"> {SubmitLabel} </A> | 
+        	                -->
+        	                {/block:SubmissionsEnabled} 
+        	                <A HREF="/archive"> Archive </A> | 
+        	                <A HREF="{RSS}"> RSS </A>
+    	                </CENTER>
+    	            </TD>
+    	        </TR>
+    	        <TR CLASS="filter">
+    	            <TD>
+    	                <CENTER>
+    	                    <IMG SRC="http://katiezone.biz/p/img/webgrafix/IELOOP.GIF" STYLE="vertical-align: middle; padding: 2px" />
+        	                <B>Filter:</B> 
+                	        <SELECT onChange="location.href=this.options[this.selectedIndex].value;">
+                    	        <option value="/">[all posts]</option>
+                                <option value="/tagged/journal">#journal</option>
+                                <option value="/tagged/audio">#audio</option>
+                                <option value="/tagged/computers">#computers</option>
+                                <option value="/tagged/programming">#programming</option>
+                                <option value="/tagged/aesthetic">#aesthetic</option>
+                                <option value="/tagged/art">#art (reblogged)</option>
+                                <option value="/tagged/important">#important</option>
+                                <option value="/about">(more tags)</option>
+        	                </SELECT>
+    	                </CENTER>
+    	            </TD>
+    	        </TR>
+    	    </TBODY>
+    	</TABLE>
+    	
+    	<BR />
+    	<HR />
+    	<BR />
+    	
+    	{block:TagPage}
+        <TABLE CLASS="tag-header" BORDER="1">
+        <TBODY>
+            <TR>
+                <TD>
+                    <CENTER>
+                        Viewing posts tagged <B>"#{Tag}"</B> [<A HREF="/">Return home</A>]
+                    </CENTER>
+                </TD>
+            </TR>
+        </TBODY>
+        <TABLE>
+        <BR />
+        {/block:TagPage}
+    
+    	<TABLE ID="post-list" BORDER="4">
+            <TBODY>
+                {block:Posts}
+                
+                <!-- {block:NoRebloggedFrom}
+                {block:RebloggedFrom}{ReblogParentName}{/block:RebloggedFrom}
+                {/block:NoRebloggedFrom} -->
+                {block:ContentSource}<!-- {SourceURL}
+                {block:SourceLogo}<img src="{BlackLogoURL}"width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />{/block:SourceLogo}
+                {block:NoSourceLogo}{SourceLink}{/block:NoSourceLogo} -->
+                {/block:ContentSource}
+                
+                    <TR>
+                        <TD>
+                        
+                            <!-- POST TABLE -->
+                            <TABLE CLASS="post 
+                                {block:Video} video-post {/block:Video}
+                            "  BORDER="2">
+                                <TBODY>
+                                    <TH {block:Pages}display="none"{/block:Pages}>
+                                        {block:NotReblog}
+                                            {block:Date} 
+        				                    <A HREF="{Permalink}">
+        				                        {Month} {DayOfMonth}, {Year}
+        				                    </A>
+        					                {/block:Date}
+    					                {/block:NotReblog}
+    					                {block:RebloggedFrom} 
+    					                    Reblogged post by <A HREF="{ReblogRootUrl}">{ReblogRootName}</A> :
+
+    					                {/block:RebloggedFrom}
+                                    </TH>
+                                    <TR>
+                                        <TD>
+                                        
+                                            <!-- Post content -->
+                                            
+                                            {block:Text}
+                                				{block:Title} 
+                            				    <H3 CLASS="post-title"> 
+                            				        <A HREF="{Permalink}"> {Title} </A> 
+                            				    </H3>
+                            				    {/block:Title}
+                            				    <DIV CLASS="thread-hell">
+                        				        {Body}	
+                            				    </DIV>
+                                            {/block:Text}
+                                        
+                                        
+                                            {block:Photo}
+                                                {LinkOPenTag}
+                        				            <img CLASS="photo" SRC="{PhotoURL-HighRes}" alt="{Photoalt}"/> 
+                        				        {LinkCloseTag}
+                        				        {block:Caption} 
+                        				        <DIV CLASS="thread-hell">
+                        				            {Caption} 
+                        				        </DIV>
+                        				        {/block:Caption} 
+                                            {/block:Photo}
+                                            
+                                        
+                                            {block:Photoset}
+                                                <!-- SOME PHOTOSET HACK FROM PixelUnion -->
+                                                
+                                                <DIV CLASS="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">
+                                                
+                                                  {block:Photos}
+                                                    <DIV CLASS="photo-data">
+                                                      <DIV CLASS="pxu-photo">
+                                                        <img alt="{PhotoAlt}" src="{PhotoURL-700}" width="{PhotoWidth-700}" height="{PhotoHeight-700}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}" CLASS="{block:Exif}exif-yes {/block:Exif}{block:Caption}caption-yes{/block:Caption}" {block:Exif}data-camera="{block:Camera}{Camera}{/block:Camera}" data-iso="{block:ISO}{ISO}{/block:ISO}" data-aperture="{block:Aperture}{Aperture}{/block:Aperture}" data-exposure="{block:Exposure}{Exposure}{/block:Exposure}" data-focal="{block:FocalLength}{FocalLength}{/block:FocalLength}"{/block:Exif} {block:Caption}data-caption="{Caption}"{/block:Caption}>
+                                                      </DIV>
+                                                      <DIV CLASS="icons">
+                                                        <a CLASS="tumblr-box" rel="post-{PostID}" HREF="{PhotoURL-HighRes}">
+                                                          <SPAN CLASS="zoom">Zoom</SPAN>
+                                                        </a>
+                                                        <SPAN CLASS="info">Info</SPAN>
+                                                      </DIV>
+                                                    </DIV>
+                                                  {/block:Photos}
+                                                </DIV>
+                            			        {block:Caption} 
+                        				        <DIV CLASS="thread-hell">
+                        				            {Caption} 
+                        				        </DIV>
+                        				        {/block:Caption}
+                                            {/block:Photoset}
+                                        
+                                        
+                                        
+                                            {block:Quote}
+                                                <DIV CLASS="quote-post">
+                                                    <P> &#8220;{Quote}&#8221; </P>
+                            				        {block:Source} 
+                            				            <P> &mdash;<em>{Source}</em></P>
+                            				        {/block:Source}
+                                                </DIV>
+                                            {/block:Quote}
+                                            
+                                            
+                                            {block:Chat}
+                                                {block:Title} 
+                                                <H3 CLASS="post-title">
+                                                    <A HREF="{Permalink}"> {Title} </A>  
+                                                </H3>
+                                                {/block:Title}
+                        				        <TABLE CLASS="chat-log">
+                        				            <TBODY>
+                        				                {block:Lines} 
+                        				                <TR>
+                        				                    <TD CLASS="chat-label"> 
+                        				                    {block:Label}
+                        				                        {Label} 
+                        				                    {/block:Label}
+                        				                    </TD>
+                        				                    <TD CLASS="chat-quote">
+                        				                    {Line}
+                        				                    </TD>
+                        				                </TR>
+                        				                {/block:Lines} 
+                        				            </TBODY>
+                        				        </TABLE>
+                                            {/block:Chat}
+                                            
+                                            
+                                            {block:Link}
+                                				<H3 CLASS="post-title"> 
+                                				    <A HREF="{URL}"> {Name} </A> 
+                                				</H3>
+                        				        <DIV CLASS="thread-hell">                                                    {block:Description} 
+                        				            {Description}
+                        				        {/block:Description} 
+                        				        </DIV>
+                                            {/block:Link}
+                                            
+                                            
+                                            {block:Video}
+                                                <DIV CLASS="video-wrapper">
+                                                    {VIDeo-700}
+                                                </DIV>
+                        				        {block:Caption} 
+                        				        <DIV CLASS="thread-hell">
+                        				            {Caption} 
+                        				        </DIV>
+                        				        {/block:Caption} 
+                                            {/block:Video}
+                                        
+                                            
+                                            {block:Audio}
+                                                <DIV CLASS="audio-post">
+                                    				{audioPlayerWhite} 
+                            				        <H3>
+                            				            {block:TRackName}<em>{TRackName} </em> {/block:TRackName} 
+                            				            {block:artist} &#8212; {artist} {/block:artist} 
+                            				        </H3>
+                        				        </DIV>
+                        				        {block:Caption} 
+                    				            <DIV CLASS="thread-hell">
+                    				            {Caption} 
+                    				            </DIV> 
+                        				        {/block:Caption}
+                                            {/block:Audio}
+                                            
+                                            
+                                            {block:Answer}
+                                                <DIV CLASS="ask-post">
+                                                    <P CLASS="question"> 
+                                    				    <SPAN CLASS="label">
+                                    				        <SPAN>&lt;&nbsp;</SPAN>{Asker}<SPAN>&nbsp;&gt;&nbsp;:&nbsp;&#9;</SPAN>
+                                    				    </SPAN>
+                                    				    {Question} 
+                                    				</P>
+                                    				{block:Answerer}
+                                                    <DIV CLASS="answer"> 
+                                    				    <P CLASS="label">
+                                    				        <SPAN>&lt;&nbsp;</SPAN>{Answerer}<SPAN>&nbsp;&gt;&nbsp;:&nbsp;&#9;</SPAN>
+                                    				    </P>
+                                    				    <SPAN CLASS="answer-container">
+                                    				        {Answer}
+                                    				    </SPAN>
+                                    				</DIV>
+                                    				{/block:Answerer}
+                                                </DIV>
+                        				        <DIV CLASS="ask-replies thread-hell"> 
+                        				            {Replies} 
+                        				        </DIV>
+                                            {/block:Answer}
+                                            
+                                            <!-- End post content -->
+                                            
+                                        </TD>
+                                    </TR>
+                                    <TR CLASS="post-info">
+                                        <TD>
+                                            <DIV CLASS="info-box">
+                                                {block:NoteCount}
+                                                    <A HREF="{Permalink}">
+                				                        <B>{NoteCountWithLabel}</B>
+                				                    </A>
+                				                    &nbsp;|&nbsp;
+            				                    {/block:NoteCount} 
+        				                        {block:HasTags}
+                                                    {block:Tags}
+                                                    <A HREF="{TagURL}"> #{Tag}</A> 
+                                                    {/block:Tags}
+                                                {/block:HasTags}
+                                            </DIV>
+                                        </TD>
+                                    </TR>
+                                </TBODY>
+                            </TABLE>
+                            <!-- END POST TABLE -->
+                        </TD>
+                    </TR>
+                    
+                    {block:PermalinkPage}
+                        {block:PostNotes} 
+                            <TR>
+                                <TD>
+                                
+                                    <!-- NOTE CONTAINER -->
+                                    <TABLE ID="note-list" BORDER="4">
+                                        <TH>
+                                            Notes ({NoteCount})
+                                        </TH>
+                                        <TBODY>
+                                            <TR>
+                                                <TD>
+                                                    {PostNotes}
+                                                </TD>
+                                            </TR>
+                                        </TBODY>
+                                    </TABLE>
+                                
+                                </TD>
+                            </TR>
+                        {/block:PostNotes}
+                    {/block:PermalinkPage}
+                    
+                {/block:Posts}
+            </TBODY>
+    	</TABLE>
+    
+        <BR />
+        <BR />
+        <BR />
+        
+        {block:Pagination}
+        <TABLE ID="pagination" BORDER="3">
+            <TR>
+                <TD>
+                    {block:PreviousPage}<SPAN CLASS="active-icon"><A HREF="{PreviousPage}">{/block:PreviousPage}
+                    <IMG CLASS="icon" SRC="http://katiezone.biz/p/img/webgrafix/DOORIN2.GIF" TITLE="Previous page" />
+                    {block:PreviousPage}</A></SPAN>{/block:PreviousPage}
+                </TD>
+                <TD>
+                    {block:HomePage} 
+                        <B>Page {CurrentPage}</B>
+                    {/block:HomePage} 
+                    {block:TagPage}
+                        <B>{CurrentPage}</B>/<B>{TotalPages}</B>
+                    {/block:TagPage}
+                </TD>
+                <TD>
+                    {block:NextPage}<SPAN CLASS="active-icon"><A HREF="{NextPage}">{/block:NextPage}
+                    <IMG CLASS="icon" SRC="http://katiezone.biz/p/img/webgrafix/DOORIN1.GIF" TITLE="Next page" />
+                    {block:NextPage}</A></SPAN>{/block:NextPage}
+                </TD>
+            </TR>
+        </TABLE>
+        {/block:Pagination}
+        
+        <BR />
+        <BR />
+                    <!-- :D -->
+        <HR />
+        <BR />
+        
+        <TABLE CLASS="copy" BORDER=4>
+        <TBODY>
+            <TR>
+                <TD>
+                    <CENTER>
+                        Copyright © 1995-2017 by {Title}. All rights reserved.
+                    </CENTER>
+                </TD>
+            </TR>
+        </TBODY>
+        <TABLE>
+        
+        <BR />
+        <BR />
+        
+        <IMG SRC="http://katiezone.biz/p/img/webgrafix/ns_logo.gif" />&nbsp;
+        <IMG SRC="http://katiezone.biz/p/img/webgrafix/notepad.gif" />&nbsp;
+        <IMG SRC="http://katiezone.biz/p/img/webgrafix/noframes.gif" />&nbsp;
+        
+        <BR />
+        <BR />
+	
+    </CENTER>
+
+    <!-- GROSS SCRIPTS TO MAKE TUMBLR WORK-->
+    <SCRIPT TYPE="text/javascript">
+        // Make media players responsive
+        var videoWrappers = document.getElementsByClassName('video-wrapper');
+        [].forEach.call( videoWrappers, function (el, i) {
+            // cache width and height values of the iframe
+            if (el.getElementsByTagName('iframe')[0]) {
+                var width = el.getElementsByTagName('iframe')[0].width;
+                var height = el.getElementsByTagName('iframe')[0].height;
+                var className = el.getElementsByTagName('iframe')[0].className;
+                // apply the padding to the video wrapper
+                if (className != "bandcamp_audio_player") {
+                    el.style.paddingBottom = height / width * 100 + '%';
+                } else {
+                    el.style.height = "120px";
+                }
+            }
+        });
+    </SCRIPT>
+    <SCRIPT TYPE="text/javascript" src="{text:PathToUnnamedJS}"></SCRIPT> <!-- (jQuery) (Don't @ me) -->
+    <SCRIPT TYPE="text/javascript" src="{text:PathToPhotosetResponsiveScript}"></SCRIPT> <!-- pxuPhotoset.min.js -->
+    <SCRIPT TYPE="text/javascript">
+        // Make photosets responsive
+        // Don't @ me
+        $(document).ready(function() {
+        	$('.photo-slideshow').pxuPhotoset({
+        		// options
+                'ligthbox'  : true,
+            	'highRes'   : true, 
+            	'rounded'   : 'false', 
+            	'exif'      : false,
+            	'captions'  : false,
+            	'gutter'    : '5px', 
+            	'photoset'  : '.photo-slideshow', 
+            	'photoWrap' : '.photo-data', 
+            	'photo'     : '.pxu-photo' 
+        	}, function() {
+        		// callback
+        	});
+        });
+    </SCRIPT>
+
+    </BODY>
+
+</HTML>
